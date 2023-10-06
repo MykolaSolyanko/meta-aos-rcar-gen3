@@ -5,6 +5,7 @@ require recipes-core/images/aos-image.inc
 
 IMAGE_INSTALL:append = " \
     aos-messageproxy \
+    xen-tools-xenstore \
     ${@bb.utils.contains('DISTRO_FEATURES', 'enable_virtio', ' virglrenderer libsdl2 qemu-system-aarch64 qemu-keymaps', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'pvcamera', 'camerabe', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'vis', 'aos-vis', '', d)} \
